@@ -35,11 +35,11 @@ def get_farmer_balance(farmer_id):
     return 50  # Let's assume the farmer has 50 credits
 
 def update_user_credits(user_id, amount):
-    # Update user credits
+    # Update user credits (placeholder)
     pass  # In real implementation, this would update the database
 
 def update_farmer_credits(farmer_id, amount):
-    # Update farmer credits
+    # Update farmer credits (placeholder)
     pass  # In real implementation, this would update the database
 
 # --- Streamlit App ---
@@ -50,7 +50,7 @@ def main():
     
     # Home Page
     if nav == "Home":
-        st.image("https://via.placeholder.com/800x400.png", use_column_width=True)
+        st.image("https://via.placeholder.com/800x400.png", use_container_width=True)  # Updated
         st.write("Welcome to SANKALP, your one-stop solution for sustainability actions!")
     
     # Tracker Page
@@ -74,7 +74,12 @@ def main():
         st.write("Here, you can buy carbon credits from local farmers.")
         
         # Display farmer data from a CSV or database
-        farmers = pd.read_csv("farmers_data.csv")  # This is a placeholder file
+        try:
+            farmers = pd.read_csv("farmers_data.csv")  # Make sure the file is in the same directory
+        except FileNotFoundError:
+            st.error("Farmers data file not found. Please check the file path.")
+            return  # Exit the function if file is not found
+        
         farmer_id = st.selectbox("Select Farmer", farmers['farmer_name'])
         credits_available = farmers.loc[farmers['farmer_name'] == farmer_id, 'credits'].values[0]
         price_per_credit = farmers.loc[farmers['farmer_name'] == farmer_id, 'price_per_credit'].values[0]
