@@ -38,15 +38,12 @@ def generate_sample_file():
 
 # Streamlit App
 def main():
-    st.title("🌍 SANSRA SANKALP: Sustainability Actions for Nature 🌱")
-    st.sidebar.title("Menu")
-    st.sidebar.markdown("Navigate through the app to track and manage carbon emissions effectively.")
-    
+    st.title("SANKALP: Sustainability Actions for Nature")
     user_type = st.sidebar.radio("Select User Type", ["Industry Level", "Common Use"])
     
     if user_type == "Industry Level":
         st.header("Industry-Level Emission Tracking")
-        st.write("Track and manage emissions for industries with flexibility.")
+        st.write("Choose to input emissions data manually or upload a file.")
         
         option = st.selectbox("How would you like to input data?", ["Manual Input", "Upload File"])
         
@@ -79,8 +76,6 @@ def main():
     
     elif user_type == "Common Use":
         st.header("Common Use Carbon Footprint Tracker")
-        st.write("Estimate and manage your carbon footprint for daily activities.")
-        
         st.subheader("Transportation Emissions")
         transport_type = st.selectbox("Transport Type", ["Car", "Bus", "Train"])
         miles = st.number_input("Miles traveled", min_value=0)
