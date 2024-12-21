@@ -3,7 +3,7 @@ pandas==1.5.3      # For handling data
 numpy==1.24.2      # For numerical operations
 altair==4.2.2      # For interactive visualizations
 matplotlib==3.7.3  # For generating pie charts and other plots
-wordcloud==1.8.3   # For creating the word cloud
+wordcloud   # For creating the word cloud
 
 streamlit
 pandas
