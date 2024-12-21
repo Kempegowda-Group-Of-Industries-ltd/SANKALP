@@ -1,8 +1,8 @@
-streamlit==1.25.0  # For building the web application
-pandas==1.5.3      # For handling data
-numpy==1.24.2      # For numerical operations
-altair==4.2.2      # For interactive visualizations
-matplotlib==3.7.3  # For generating pie charts and other plots
+streamlit # For building the web application
+pandas      # For handling data
+numpy      # For numerical operations
+altair      # For interactive visualizations
+matplotlib  # For generating pie charts and other plots
 wordcloud   # For creating the word cloud
 
 streamlit
